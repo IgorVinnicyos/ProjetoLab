@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author J.Anderson
  */
 public class RepositorioCoordenador {
-    private static ArrayList<Coordenador> listaCoordenador = new ArrayList();
+   
 
     public static void RepositorioCoordenador() {
         

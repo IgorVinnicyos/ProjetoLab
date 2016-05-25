@@ -11,16 +11,17 @@ package classes;
  */
 public class Coordenador {
     private String nome;
-    private String diciplina;
+    private boolean professor;
     private String turno;
-    private int codigo; 
-    private int salario; 
+    private int idcoordenador; 
+    private double salario;
+   
 
-    public Coordenador(String nome, String diciplina, String turno, int codigo, int salario) {
+    public Coordenador(String nome, String turno,  double salario,boolean professor) {
         this.nome = nome;
-        this.diciplina = diciplina;
+        this.professor = professor;
         this.turno = turno;
-        this.codigo = codigo;
+        
         this.salario = salario;
     }
 
@@ -35,12 +36,12 @@ public class Coordenador {
         this.nome = nome;
     }
 
-    public String getDiciplina() {
-        return diciplina;
+    public boolean getProfessor() {
+        return professor;
     }
 
-    public void setDiciplina(String diciplina) {
-        this.diciplina = diciplina;
+    public void setProfessor(boolean professor) {
+        this.professor = professor;
     }
 
     public String getTurno() {
@@ -51,25 +52,25 @@ public class Coordenador {
         this.turno = turno;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getIdcoordenador() {
+        return idcoordenador;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setIdcoordenador(int idcoordenador) {
+        this.idcoordenador = idcoordenador;
     }
 
-    public int getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(int salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
     @Override
     public String toString() {
-        return "Coordenador: " + "\nNome: " + nome + "\nDiciplina: " + diciplina + "\nTurno: " + turno + "\nCodigo: " + codigo + "\nSalario: " + salario ;
+        return "Coordenador: " + "\nNome: " + nome + "\nProfessor: " + professor + "\nTurno: " + turno + "\nCodigo: " + idcoordenador + "\nSalario: " + salario ;
     }
 
    
