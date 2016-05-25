@@ -11,52 +11,26 @@ package classes;
  */
 public class Departamento {
     
-    private int numero;
-    private String telefone;
+    private int iddepartamento;
     private String horario;
-    private String bloco;
-    private String andar;
-    private String funcionarios;
-    
-    
-    
+    private int local_idlocal;
+    private String responsavel;
+    private String tipo;
 
-    public Departamento(int numero, String telefone, String bloco, String andar, String funcionarios) {
-        this.numero = numero;
-        this.telefone = telefone;
-        this.bloco = bloco;
-        this.andar = andar;
-        this.funcionarios = funcionarios;
-        
-        
+    public Departamento(int iddepartamento, String horario, int local_idlocal, String responsavel, String tipo) {
+        this.iddepartamento = iddepartamento;
+        this.horario = horario;
+        this.local_idlocal = local_idlocal;
+        this.responsavel = responsavel;
+        this.tipo = tipo;
     }
 
-    public Departamento() {
-    }
-    
-
-    public String getFuncionarios() {
-        return funcionarios;
+    public int getIddepartamento() {
+        return iddepartamento;
     }
 
-    public void setFuncionarios(String funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setIddepartamento(int iddepartamento) {
+        this.iddepartamento = iddepartamento;
     }
 
     public String getHorario() {
@@ -67,32 +41,36 @@ public class Departamento {
         this.horario = horario;
     }
 
-    public String getBloco() {
-        return bloco;
+    public int getLocal_idlocal() {
+        return local_idlocal;
     }
 
-    public void setBloco(String bloco) {
-        this.bloco = bloco;
+    public void setLocal_idlocal(int local_idlocal) {
+        this.local_idlocal = local_idlocal;
     }
 
-    public String getAndar() {
-        return andar;
+    public String getResponsavel() {
+        return responsavel;
     }
 
-    public void setAndar(String andar) {
-        this.andar = andar;
+    public void setResponsavel(String responsavel) {
+        this.responsavel = responsavel;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @Override
     public String toString() {
-        return "Departamento" + "\nNumero: " + numero + ", \nTelefone: " + telefone + ", \nHorario: " + horario + ", \nBloco: " + bloco + ", \nAndar: " + andar + ", /nFuncionarios: " + funcionarios;
+        return "Departamento: " + "\nIddepartamento: " + iddepartamento + "\nHorario: " + horario + "\nLocal_IDlocal: " + local_idlocal + "\nResponsavel: " + responsavel + "\nTipo: " + tipo;
     }
+ 
+     
     
-    
-    
-    
-    
-    
-   
     
 }

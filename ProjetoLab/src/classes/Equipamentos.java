@@ -15,14 +15,18 @@ public class Equipamentos {
     private int quantidade;
     private String tipo;
     private String descricao;
+    private int idequipamentos;
 
-    public Equipamentos(String nome, int quantidade, String tipo, String descricao) {
+    public Equipamentos(String nome, int quantidade, String tipo, String descricao, int idequipamentos) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.tipo = tipo;
         this.descricao = descricao;
+        this.idequipamentos = idequipamentos;
     }
+    
 
+  
     public Equipamentos() {
     }
 
@@ -58,12 +62,20 @@ public class Equipamentos {
         this.descricao = descricao;
     }
 
+    public int getIdequipamentos() {
+        return idequipamentos;
+    }
+
+    public void setIdequipamentos(int idequipamentos) {
+        this.idequipamentos = idequipamentos;
+    }
+
     @Override
     public String toString() {
-        return "Equipamentos:" + "\nNome: " + nome + "\nQuantidade: " + quantidade + "\nTipo=" + tipo + "\nDescrição:" + descricao;
+        return "Equipamentos: " + "\nNome: " + nome + "\nQuantidade: " + quantidade + "\nTipo: " + tipo + "\nDescricao: " + descricao + "\nIdEquipamentos: " + idequipamentos;
     }
-    
-    
+
+ 
     
     
 }
