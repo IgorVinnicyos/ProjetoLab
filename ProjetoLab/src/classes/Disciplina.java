@@ -12,10 +12,10 @@ package classes;
 public class Disciplina {
     
     private String disciplina;
-    private String professor_idprofessor;
+    private int  professor_idprofessor;
     private boolean status;
 
-    public Disciplina(String disciplina, String professor_idprofessor,boolean status) {
+    public Disciplina(String disciplina, int professor_idprofessor,boolean status) {
         this.disciplina = disciplina;
         this.professor_idprofessor = professor_idprofessor;
         this.status = status;
@@ -32,11 +32,11 @@ public class Disciplina {
         this.disciplina = disciplina;
     }
     
-       public String getProfessor_idprofessor() {
+       public int getProfessor_idprofessor() {
         return professor_idprofessor;
     }
 
-    public void setProfessor_idprofessor(String professor_idprofessor) {
+    public void setProfessor_idprofessor(int professor_idprofessor) {
         this.professor_idprofessor = professor_idprofessor;
     }
 
