@@ -14,12 +14,15 @@ public class Disciplina {
     private String disciplina;
     private int  professor_idprofessor;
     private boolean status;
+    private int iddiciplina;
 
     public Disciplina(String disciplina, int professor_idprofessor,boolean status) {
         this.disciplina = disciplina;
         this.professor_idprofessor = professor_idprofessor;
         this.status = status;
     }
+    
+    
 
     public Disciplina() {
     }
@@ -51,7 +54,15 @@ public class Disciplina {
     
     @Override
     public String toString() {
-        return "Disciplina: " + disciplina + "\n Professor_IdProfessor: " + professor_idprofessor +"\nStatus: " + status;
+        return "Disciplina: " + disciplina + "\n Professor_IdProfessor: " + professor_idprofessor +"\nStatus: " + status + "\nID_Diciplina: " + iddiciplina;
+    }
+
+    public int getIddiciplina() {
+        return iddiciplina;
+    }
+
+    public void setIddiciplina(int iddiciplina) {
+        this.iddiciplina = iddiciplina;
     }
 
    
