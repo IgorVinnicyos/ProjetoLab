@@ -40,7 +40,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setExtendedState(6);
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         getContentPane().setLayout(null);
 
         logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logout.png"))); // NOI18N
@@ -51,7 +50,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         logout.setFocusCycleRoot(true);
         logout.setFocusPainted(false);
         logout.setFocusTraversalPolicyProvider(true);
-        logout.setOpaque(false);
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutActionPerformed(evt);

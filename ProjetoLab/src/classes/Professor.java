@@ -13,13 +13,14 @@ public class Professor {
     
     private String nome;
     private String turno;
-    private int salario;
+    private double salario;
     private String formacao;
     private int coordenador_idcoordenador;
     private int idprofessor;
     private int nota_avaliacao;
+    private boolean status;
 
-    public Professor(String nome, String turno, int salario, String formacao, int coordenador_idcoordenador, int idprofessor, int nota_avaliacao) {
+    public Professor(String nome, String turno, double salario, String formacao, int coordenador_idcoordenador, int idprofessor, int nota_avaliacao,boolean status) {
         this.nome = nome;
         this.turno = turno;
         this.salario = salario;
@@ -27,6 +28,7 @@ public class Professor {
         this.coordenador_idcoordenador = coordenador_idcoordenador;
         this.idprofessor = idprofessor;
         this.nota_avaliacao = nota_avaliacao;
+        this.status = status;
     }
     
 
@@ -51,11 +53,11 @@ public class Professor {
         this.turno = turno;
     }
 
-    public int getSalario() {
+    public double getSalario() {
         return salario;
     }
 
-    public void setSalario(int salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
@@ -92,11 +94,20 @@ public class Professor {
         this.nota_avaliacao = nota_avaliacao;
     }
 
-    @Override
-    public String toString() {
-        return "Professor: " + "\nNome: " + nome + "\nTurno: " + turno + "\nSalario: " + salario + "\nFormacao: " + formacao + "\nCoordenador_idcoordenador: " + coordenador_idcoordenador + "\nIdProfessor: " + idprofessor + "\nNota_Avaliacao: " + nota_avaliacao;
+       public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
   
+    @Override
+    public String toString() {
+        return "Professor: " + "\nNome: " + nome + "\nTurno: " + turno + "\nSalario: " + salario + "\nFormacao: " + formacao + "\nCoordenador_idcoordenador: " + coordenador_idcoordenador + "\nIdProfessor: " + idprofessor + "\nNota_Avaliacao: " + nota_avaliacao + "\nStatus: " + status;
+    }
+
+ 
     
     
     

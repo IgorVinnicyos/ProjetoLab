@@ -15,16 +15,25 @@ public class Coordenador {
     private String turno;
     private int idcoordenador; 
     private double salario;
+    private boolean status;
    
 
-    public Coordenador(String nome, String turno,  double salario,boolean professor) {
+    public Coordenador(String nome, String turno,  double salario,boolean professor,boolean status) {
         this.nome = nome;
         this.professor = professor;
         this.turno = turno;
-        
+        this.status = status;
         this.salario = salario;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+   
     public Coordenador() {
     }
 
@@ -70,7 +79,7 @@ public class Coordenador {
 
     @Override
     public String toString() {
-        return "Coordenador: " + "\nNome: " + nome + "\nProfessor: " + professor + "\nTurno: " + turno + "\nCodigo: " + idcoordenador + "\nSalario: " + salario ;
+        return "Coordenador: " + "\nNome: " + nome + "\nProfessor: " + professor + "\nTurno: " + turno + "\nCodigo: " + idcoordenador + "\nSalario: " + salario + "\nStatus: " + status;
     }
 
    

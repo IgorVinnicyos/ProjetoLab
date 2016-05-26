@@ -15,13 +15,15 @@ public class Funcionario {
     private int idfuncionario;
     private String nome;
     private double salario;
+    private boolean status;
 
-    public Funcionario(String cargo, int departamento_iddepartamento, int idfuncionario, String nome, double salario) {
+    public Funcionario(String cargo, int departamento_iddepartamento, int idfuncionario, String nome, double salario,boolean status) {
         this.cargo = cargo;
         this.departamento_iddepartamento = departamento_iddepartamento;
         this.idfuncionario = idfuncionario;
         this.nome = nome;
         this.salario = salario;
+        this.status = status;
     }
 
     public String getCargo() {
@@ -63,13 +65,22 @@ public class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+    
+        public boolean isStatus() {
+        return status;
+    }
 
-    @Override
-    public String toString() {
-        return "Funcionario: " + "\nCargo: " + cargo + "\nDepartamento_IDdepartamento: " + departamento_iddepartamento + "\nIDfuncionario: " + idfuncionario + "\nNome: " + nome + "\nSalario: " + salario;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
     
     
+    @Override
+    public String toString() {
+        return "Funcionario: " + "\nCargo: " + cargo + "\nDepartamento_IDdepartamento: " + departamento_iddepartamento + "\nIDfuncionario: " + idfuncionario + "\nNome: " + nome + "\nSalario: " + salario + "\nStatus: " + status ;
+    }
+
+
     
     
 }

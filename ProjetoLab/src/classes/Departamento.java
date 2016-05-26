@@ -16,15 +16,18 @@ public class Departamento {
     private int local_idlocal;
     private String responsavel;
     private String tipo;
+    private boolean status;
 
-    public Departamento(int iddepartamento, String horario, int local_idlocal, String responsavel, String tipo) {
+    public Departamento(int iddepartamento, String horario, int local_idlocal, String responsavel, String tipo,boolean status) {
         this.iddepartamento = iddepartamento;
         this.horario = horario;
         this.local_idlocal = local_idlocal;
         this.responsavel = responsavel;
         this.tipo = tipo;
+        this.status = status;
     }
 
+    
     public int getIddepartamento() {
         return iddepartamento;
     }
@@ -65,10 +68,20 @@ public class Departamento {
         this.tipo = tipo;
     }
 
+       public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+ 
+    
     @Override
     public String toString() {
-        return "Departamento: " + "\nIddepartamento: " + iddepartamento + "\nHorario: " + horario + "\nLocal_IDlocal: " + local_idlocal + "\nResponsavel: " + responsavel + "\nTipo: " + tipo;
+        return "Departamento: " + "\nIddepartamento: " + iddepartamento + "\nHorario: " + horario + "\nLocal_IDlocal: " + local_idlocal + "\nResponsavel: " + responsavel + "\nTipo: " + tipo + "\nStatus: " + status;
     }
+
  
      
     

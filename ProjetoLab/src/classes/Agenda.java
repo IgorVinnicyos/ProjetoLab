@@ -15,14 +15,28 @@ public class Agenda {
     private String horario;
     private int idagenda;
     private int quantidade_dias;
+    private boolean status;
 
-    public Agenda(String dias_semanais, String horario, int idagenda, int quantidade_dias) {
+    public Agenda(String dias_semanais, String horario, int idagenda, int quantidade_dias, boolean status) {
         this.dias_semanais = dias_semanais;
         this.horario = horario;
         this.idagenda = idagenda;
         this.quantidade_dias = quantidade_dias;
+        this.status = status;
+       
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    
+    
+    
     public String getDias_semanais() {
         return dias_semanais;
     }
@@ -57,7 +71,7 @@ public class Agenda {
 
     @Override
     public String toString() {
-        return "Agenda: " + "\nDias_Semanais: " + dias_semanais + "\nHorario: " + horario + "\nIDagenda: " + idagenda + "\nQuantidade_dias: " + quantidade_dias;
+        return "Agenda: " + "\nDias_Semanais: " + dias_semanais + "\nHorario: " + horario + "\nIDagenda: " + idagenda + "\nQuantidade_dias: " + quantidade_dias + "\nStatus: " + status;
     }
     
     

@@ -13,16 +13,18 @@ public class Sala {
     
    private int capacidade_aluno;
    private int idsala;
-   private String locada;
+   private boolean locada;
    private String local_idlocal;
    private String tipo;
+   private boolean status;
 
-    public Sala(int capacidade_aluno, int idsala, String locada, String local_idlocal, String tipo) {
+    public Sala(int capacidade_aluno, int idsala, boolean locada, String local_idlocal, String tipo,boolean status) {
         this.capacidade_aluno = capacidade_aluno;
         this.idsala = idsala;
         this.locada = locada;
         this.local_idlocal = local_idlocal;
         this.tipo = tipo;
+        this.status = status;
     }
 
     public int getCapacidade_aluno() {
@@ -41,13 +43,15 @@ public class Sala {
         this.idsala = idsala;
     }
 
-    public String getLocada() {
+    public boolean isLocada() {
         return locada;
     }
 
-    public void setLocada(String locada) {
+    public void setLocada(boolean locada) {
         this.locada = locada;
     }
+
+  
 
     public String getLocal_idlocal() {
         return local_idlocal;
@@ -65,9 +69,18 @@ public class Sala {
         this.tipo = tipo;
     }
 
+    
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "Sala: " + "\nCapacidade_aluno: " + capacidade_aluno + "\nIdsala: " + idsala + "\nSala Locada: " + locada + "\nLocal_IDlocal: " + local_idlocal + "\nTipo: " + tipo;
+        return "Sala: " + "\nCapacidade_aluno: " + capacidade_aluno + "\nIdsala: " + idsala + "\nSala Locada: " + locada + "\nLocal_IDlocal: " + local_idlocal + "\nTipo: " + tipo + "\nStatus: " + status;
     }
 
     

@@ -21,8 +21,9 @@ public class Solicitacao {
     private int numero_protocolo;
     private int professor_idprofessor;
     private int sala_idsala;
+    private boolean status;
 
-    public Solicitacao(Date data_solicitacao, int depatarmento_iddepartamento, String horario, int idsolicitacao, int numero_protocolo, int professor_idprofessor, int sala_idsala) {
+    public Solicitacao(Date data_solicitacao, int depatarmento_iddepartamento, String horario, int idsolicitacao, int numero_protocolo, int professor_idprofessor, int sala_idsala,boolean status) {
         this.data_solicitacao = data_solicitacao;
         this.depatarmento_iddepartamento = depatarmento_iddepartamento;
         this.horario = horario;
@@ -30,6 +31,7 @@ public class Solicitacao {
         this.numero_protocolo = numero_protocolo;
         this.professor_idprofessor = professor_idprofessor;
         this.sala_idsala = sala_idsala;
+        this.status = status;
     }
 
     public Date getData_solicitacao() {
@@ -88,10 +90,20 @@ public class Solicitacao {
         this.sala_idsala = sala_idsala;
     }
 
+       public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
     @Override
     public String toString() {
-        return "Solicitacao: " + "\nData_Solicitacao: " + data_solicitacao + "\nDepatarmento_IDdepartamento: " + depatarmento_iddepartamento + "\nHorario: " + horario + "\nIDsolicitacao: " + idsolicitacao + "\nNumero_Protocolo: " + numero_protocolo + "\nProfessor_IDprofessor: " + professor_idprofessor + "\nSala_IDsala: " + sala_idsala;
+        return "Solicitacao: " + "\nData_Solicitacao: " + data_solicitacao + "\nDepatarmento_IDdepartamento: " + depatarmento_iddepartamento + "\nHorario: " + horario + "\nIDsolicitacao: " + idsolicitacao + "\nNumero_Protocolo: " + numero_protocolo + "\nProfessor_IDprofessor: " + professor_idprofessor + "\nSala_IDsala: " + sala_idsala + "\nStatus: " + status;
     }
+
+ 
     
     
     

@@ -14,12 +14,14 @@ public class Local {
     private String bloco;
     private String codigo;
     private int idlocal;
+    private boolean status;
 
-    public Local(String andar, String bloco, String codigo, int idlocal) {
+    public Local(String andar, String bloco, String codigo, int idlocal,boolean status) {
         this.andar = andar;
         this.bloco = bloco;
         this.codigo = codigo;
         this.idlocal = idlocal;
+        this.status = status;
     }
 
     public String getAndar() {
@@ -54,11 +56,21 @@ public class Local {
         this.idlocal = idlocal;
     }
 
-    @Override
-    public String toString() {
-        return "Local: " + "\nAndar: " + andar + ",\nBloco: " + bloco + "\nCodigo: " + codigo + "\nIDlocal: " + idlocal;
+    
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
     
+    
+    @Override
+    public String toString() {
+        return "Local: " + "\nAndar: " + andar + "\nBloco: " + bloco + "\nCodigo: " + codigo + "\nIDlocal: " + idlocal + "\nStatus: " + status;
+    }
+
     
     
     

@@ -15,14 +15,15 @@ public class LocaSala {
     
     private int horario;
     private Date dia;
-    private int autorizacao;
+    private boolean autorizacao;
     private int agenda_idagenda;
     private int coordenador_idcoordenador;
     private int idloca_sala;
     private int professor_idprofessor;
     private int sala_idsala;
+    private boolean status;
 
-    public LocaSala(int horario, Date dia, int autorizacao, int agenda_idagenda, int coordenador_idcoordenador, int idloca_sala, int professor_idprofessor, int sala_idsala) {
+    public LocaSala(int horario, Date dia, boolean autorizacao, int agenda_idagenda, int coordenador_idcoordenador, int idloca_sala, int professor_idprofessor, int sala_idsala,boolean status) {
         this.horario = horario;
         this.dia = dia;
         this.autorizacao = autorizacao;
@@ -31,6 +32,7 @@ public class LocaSala {
         this.idloca_sala = idloca_sala;
         this.professor_idprofessor = professor_idprofessor;
         this.sala_idsala = sala_idsala;
+        this.status = status;
     }
 
     public int getHorario() {
@@ -49,13 +51,15 @@ public class LocaSala {
         this.dia = dia;
     }
 
-    public int getAutorizacao() {
+    public boolean isAutorizacao() {
         return autorizacao;
     }
 
-    public void setAutorizacao(int autorizacao) {
+    public void setAutorizacao(boolean autorizacao) {
         this.autorizacao = autorizacao;
     }
+
+    
 
     public int getAgenda_idagenda() {
         return agenda_idagenda;
@@ -97,9 +101,17 @@ public class LocaSala {
         this.sala_idsala = sala_idsala;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
-        return "LocaSala: " + "\nHorario: " + horario + "\nDia: " + dia + "\nAutorizacao: " + autorizacao + "\nAgenda_Idagenda: " + agenda_idagenda + "\nCoordenador_idcoordenador" + coordenador_idcoordenador + ", idloca_sala=" + idloca_sala + ", professor_idprofessor=" + professor_idprofessor + ", sala_idsala=" + sala_idsala + '}';
+        return "LocaSala: " + "\nHorario: " + horario + "\nDia: " + dia + "\nAutorizacao: " + autorizacao + "\nAgenda_Idagenda: " + agenda_idagenda + "\nCoordenador_idcoordenador" + coordenador_idcoordenador + ", idloca_sala=" + idloca_sala + ", professor_idprofessor=" + professor_idprofessor + ", sala_idsala=" + sala_idsala + "\nStatus: " + status;
     }
 
 

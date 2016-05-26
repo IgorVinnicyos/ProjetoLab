@@ -13,10 +13,12 @@ public class Telefone {
     
     private int departamento_iddepartamento;
     private int numero;
+    private boolean status;
 
-    public Telefone(int departamento_iddepartamento, int numero) {
+    public Telefone(int departamento_iddepartamento, int numero,boolean status) {
         this.departamento_iddepartamento = departamento_iddepartamento;
         this.numero = numero;
+        this.status = status;
     }
 
     public int getDepartamento_iddepartamento() {
@@ -35,9 +37,19 @@ public class Telefone {
         this.numero = numero;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return "Telefone: " + "\nDepartamento_IDdepartamento: " + departamento_iddepartamento + "\nNumero: " + numero;
+        return "Telefone: " + "\nDepartamento_IDdepartamento: " + departamento_iddepartamento + "\nNumero: " + numero + "\nStatus: " + status;
     }
     
     

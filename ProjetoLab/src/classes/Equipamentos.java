@@ -16,13 +16,15 @@ public class Equipamentos {
     private String tipo;
     private String descricao;
     private int idequipamentos;
+    private boolean status;
 
-    public Equipamentos(String nome, int quantidade, String tipo, String descricao, int idequipamentos) {
+    public Equipamentos(String nome, int quantidade, String tipo, String descricao, int idequipamentos,boolean status) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.tipo = tipo;
         this.descricao = descricao;
         this.idequipamentos = idequipamentos;
+        this.status = status;
     }
     
 
@@ -70,11 +72,21 @@ public class Equipamentos {
         this.idequipamentos = idequipamentos;
     }
 
-    @Override
-    public String toString() {
-        return "Equipamentos: " + "\nNome: " + nome + "\nQuantidade: " + quantidade + "\nTipo: " + tipo + "\nDescricao: " + descricao + "\nIdEquipamentos: " + idequipamentos;
+      public boolean isStatus() {
+        return status;
     }
 
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Equipamentos: " + "\nNome: " + nome + "\nQuantidade: " + quantidade + "\nTipo: " + tipo + "\nDescricao: " + descricao + "\nIdEquipamentos: " + idequipamentos + "\nStatus: " + status;
+    }
+
+  
  
     
     

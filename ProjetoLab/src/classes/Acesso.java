@@ -16,15 +16,20 @@ public class Acesso {
     private int login;
     private int professor_idprofessor;
     private String senha;
+    private boolean status;
 
-    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, int idacesso, int login, int professor_idprofessor, String senha) {
+    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, int idacesso, int login, int professor_idprofessor, String senha, boolean status) {
         this.coordenador_idcoordenador = coordenador_idcoordenador;
         this.funcionario_idfuncionario = funcionario_idfuncionario;
         this.idacesso = idacesso;
         this.login = login;
         this.professor_idprofessor = professor_idprofessor;
         this.senha = senha;
+        this.status = status;
+        
     }
+
+  
 
     public int getCoordenador_idcoordenador() {
         return coordenador_idcoordenador;
@@ -74,11 +79,21 @@ public class Acesso {
         this.senha = senha;
     }
 
-    @Override
-    public String toString() {
-        return "Acesso: " + "\nCoordenador_IDcoordenador: " + coordenador_idcoordenador + "\nFuncionario_IDfuncionario: " + funcionario_idfuncionario + "\nIDacesso: " + idacesso + "\nLogin: " + login + "\nProfessor_IDprofessor: " + professor_idprofessor + "\nSenha: " + senha;
+    
+        public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
  
+    @Override
+    public String toString() {
+        return "Acesso: " + "\nCoordenador_IDcoordenador: " + coordenador_idcoordenador + "\nFuncionario_IDfuncionario: " + funcionario_idfuncionario + "\nIDacesso: " + idacesso + "\nLogin: " + login + "\nProfessor_IDprofessor: " + professor_idprofessor + "\nSenha: " + senha + "\nStatus: " + status;
+    }
+
+
     
     
     

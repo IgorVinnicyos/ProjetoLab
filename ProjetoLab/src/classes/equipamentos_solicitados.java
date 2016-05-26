@@ -17,11 +17,13 @@ public class equipamentos_solicitados {
     private int equipamentos_idequipamentos;
     private int quantidade;
     private int solicitacao_idsolicitacao;
+    private boolean status;
 
-    public equipamentos_solicitados(int equipamentos_idequipamentos, int quantidade, int solicitacao_idsolicitacao) {
+    public equipamentos_solicitados(int equipamentos_idequipamentos, int quantidade, int solicitacao_idsolicitacao,boolean status) {
         this.equipamentos_idequipamentos = equipamentos_idequipamentos;
         this.quantidade = quantidade;
         this.solicitacao_idsolicitacao = solicitacao_idsolicitacao;
+        this.status = status;
     }
 
     public int getEquipamentos_idequipamentos() {
@@ -48,9 +50,18 @@ public class equipamentos_solicitados {
         this.solicitacao_idsolicitacao = solicitacao_idsolicitacao;
     }
 
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }  
+    
+    
     @Override
     public String toString() {
-        return "Equipamentos_solicitados: " + "\nEquipamentos_idequipamentos: " + equipamentos_idequipamentos + ",\nQuantidade: " + quantidade + "\nSolicitacao_IDsolicitacao: " + solicitacao_idsolicitacao;
+        return "Equipamentos_solicitados: " + "\nEquipamentos_idequipamentos: " + equipamentos_idequipamentos + ",\nQuantidade: " + quantidade + "\nSolicitacao_IDsolicitacao: " + solicitacao_idsolicitacao + "\nStatus: " + status;
     }
     
     
