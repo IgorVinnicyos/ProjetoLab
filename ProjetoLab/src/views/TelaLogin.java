@@ -4,18 +4,35 @@
  * and open the template in the editor.
  */
 package views;
-
+import classes.Coordenador;
+import classes.Departamento;
+import classes.Funcionario;
+import classes.Professor;
+import conexao.Conecta;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import repositorio.pilha.Pilha;
+import views.professor.TelaPrincipal;
 /**
  *
  * @author igor_
  */
 public class TelaLogin extends javax.swing.JFrame {
-
+    Conecta con = new Conecta();
+    Connection conexao ;
+    Connection conex ;
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
         initComponents();
+        
+        conexao = con.Conecta();
+        
+        
+        
     }
 
     /**
@@ -29,19 +46,24 @@ public class TelaLogin extends javax.swing.JFrame {
 
         acesso = new javax.swing.ButtonGroup();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        campoLogin = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        RadioProfessor = new javax.swing.JRadioButton();
+        RadioCoordenador = new javax.swing.JRadioButton();
+        RadioTi = new javax.swing.JRadioButton();
+        campoSenha = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
         setMinimumSize(new java.awt.Dimension(1366, 768));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jToggleButton1.setBackground(new java.awt.Color(255, 153, 0));
@@ -55,15 +77,13 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jToggleButton1);
         jToggleButton1.setBounds(680, 510, 190, 30);
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        campoLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                campoLoginActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(630, 330, 280, 30);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(630, 420, 280, 30);
+        getContentPane().add(campoLogin);
+        campoLogin.setBounds(630, 330, 280, 30);
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,44 +102,46 @@ public class TelaLogin extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(630, 300, 80, 20);
 
-        jRadioButton1.setBackground(new java.awt.Color(3, 54, 130));
-        acesso.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Professor");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        RadioProfessor.setBackground(new java.awt.Color(3, 54, 130));
+        acesso.add(RadioProfessor);
+        RadioProfessor.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        RadioProfessor.setForeground(new java.awt.Color(255, 255, 255));
+        RadioProfessor.setText("Professor");
+        RadioProfessor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                RadioProfessorActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton1);
-        jRadioButton1.setBounds(660, 460, 80, 21);
+        getContentPane().add(RadioProfessor);
+        RadioProfessor.setBounds(660, 460, 80, 21);
 
-        jRadioButton2.setBackground(new java.awt.Color(3, 54, 130));
-        acesso.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jRadioButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton2.setText("Coordenador");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        RadioCoordenador.setBackground(new java.awt.Color(3, 54, 130));
+        acesso.add(RadioCoordenador);
+        RadioCoordenador.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        RadioCoordenador.setForeground(new java.awt.Color(255, 255, 255));
+        RadioCoordenador.setText("Coordenador");
+        RadioCoordenador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                RadioCoordenadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton2);
-        jRadioButton2.setBounds(740, 460, 87, 21);
+        getContentPane().add(RadioCoordenador);
+        RadioCoordenador.setBounds(740, 460, 87, 21);
 
-        jRadioButton3.setBackground(new java.awt.Color(3, 54, 130));
-        acesso.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
-        jRadioButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton3.setText("TI");
-        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+        RadioTi.setBackground(new java.awt.Color(3, 54, 130));
+        acesso.add(RadioTi);
+        RadioTi.setFont(new java.awt.Font("Arial", 0, 10)); // NOI18N
+        RadioTi.setForeground(new java.awt.Color(255, 255, 255));
+        RadioTi.setText("TI");
+        RadioTi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton3ActionPerformed(evt);
+                RadioTiActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton3);
-        jRadioButton3.setBounds(830, 460, 93, 21);
+        getContentPane().add(RadioTi);
+        RadioTi.setBounds(830, 460, 93, 21);
+        getContentPane().add(campoSenha);
+        campoSenha.setBounds(630, 420, 280, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/telaLogin.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -131,23 +153,149 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
+        
+        
+        String sql = "SELECT * FROM ACESSO WHERE LOGIN ='"+campoLogin.getText()+"'";
+        try {
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rst = stmt.executeQuery();
+            
+            while(rst.next())
+            {
+            if( rst.getString("senha")== campoSenha.getText()&&rst.getBoolean("Status")==true);
+            {
+                JOptionPane.showMessageDialog(null, "logado");
+                
+                 
+                 
+                    
+                  
+                
+                if(RadioCoordenador.isSelected()){
+                    
+                    int cod = rst.getInt("coordenador_idcoordenador");
+                   String query = "SELECT * FROM COORDENADOR WHERE IDCOORDENADOR='"+cod+"'";
+                         PreparedStatement Cstmt = conexao.prepareStatement(query);
+                       ResultSet Crst = Cstmt.executeQuery();
+                       
+                           
+                            while(Crst.next()){
+                    
+                    if(Crst.getBoolean("status")==true){
+                    Coordenador c = new Coordenador(Crst.getString("nome"),Crst.getString("turno"),Crst.getDouble("salario"),Crst.getBoolean("professor"),Crst.getBoolean("status"));
+                   
+                   
+               
+                    
+                    JOptionPane.showMessageDialog(null, c);
+                   Pilha.coordenadorPilha(c);
+                    TelaPrincipal tp = new TelaPrincipal();
+                    tp.setVisible(true);
+                    this.dispose();
+                    }else{
+                    
+                    JOptionPane.showMessageDialog(null, "User inválido");
+                    }
+                       
+                            }
+                    
+                           
+                  
+                   }else{JOptionPane.showMessageDialog(null, "Tipo de user inválido");} 
+                }
+                if(RadioProfessor.isSelected())
+                {
+               
+                    int cod = rst.getInt("professor_idprofessor");
+                    String query = "SELECT * FROM PROFESSOR WHERE IDPROFESSOR='"+cod+"'";
+                         PreparedStatement Pstmt = conexao.prepareStatement(query);
+                       ResultSet Prst = Pstmt.executeQuery();
+                       
+                         
+                            while(Prst.next()){
+                    
+                    if(Prst.getBoolean("status")==true){
+                                Professor p = new Professor(Prst.getString("nome"),Prst.getString("turno"),Prst.getDouble("salario"),Prst.getString("formacao"),Prst.getInt("coordenador_idcoordenador"),Prst.getInt("nota_avaliacao"),Prst.getBoolean("status"));
+                   
+                   
+               
+                    
+                    JOptionPane.showMessageDialog(null, p);
+                   Pilha.professorPilha(p);
+                    TelaPrincipal tp = new TelaPrincipal();
+                    tp.setVisible(true);
+                    this.dispose();
+                    
+                    }
+                    
+                            }
+                    
+                       
+                
+                } if(RadioTi.isSelected())
+                {
+                  
+                int cod = rst.getInt("funcionario_idfuncionario");
+                    String query = "SELECT * FROM FUNCIONARIO WHERE IDFUNCIONARIO='"+cod+"'";
+                         PreparedStatement Tstmt = conexao.prepareStatement(query);
+                       ResultSet Trst = Tstmt.executeQuery();
+                       
+                         
+                            while(Trst.next()){
+                    
+                    if(Trst.getBoolean("status")==true){
+                                Funcionario f = new Funcionario(Trst.getString("cargo"),Trst.getInt("departamento_iddepartamento"),Trst.getString("nome"),Trst.getDouble("salario"),Trst.getBoolean("status"));
+                                 
+             
+                    JOptionPane.showMessageDialog(null, f);
+                   Pilha.tiPilha(f);
+                    TelaPrincipal tp = new TelaPrincipal();
+                    tp.setVisible(true);
+                    this.dispose();
+                    
+                    }else{
+                    JOptionPane.showMessageDialog(null, "user inválido");
+                    }
+                            }
+                
+                }
+            
+        
+                
+            
+                
+              
+                
+            } 
+            
+            
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void campoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoLoginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_campoLoginActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void RadioProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioProfessorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_RadioProfessorActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void RadioCoordenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioCoordenadorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_RadioCoordenadorActionPerformed
 
-    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+    private void RadioTiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RadioTiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton3ActionPerformed
+    }//GEN-LAST:event_RadioTiActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments
@@ -185,16 +333,16 @@ public class TelaLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton RadioCoordenador;
+    private javax.swing.JRadioButton RadioProfessor;
+    private javax.swing.JRadioButton RadioTi;
     public static javax.swing.ButtonGroup acesso;
+    private javax.swing.JTextField campoLogin;
+    private javax.swing.JPasswordField campoSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
