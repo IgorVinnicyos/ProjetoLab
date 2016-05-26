@@ -20,13 +20,13 @@ public class Professor {
     private int nota_avaliacao;
     private boolean status;
 
-    public Professor(String nome, String turno, double salario, String formacao, int coordenador_idcoordenador, int idprofessor, int nota_avaliacao,boolean status) {
+    public Professor(String nome, String turno, double salario, String formacao, int coordenador_idcoordenador,  int nota_avaliacao,boolean status) {
         this.nome = nome;
         this.turno = turno;
         this.salario = salario;
         this.formacao = formacao;
         this.coordenador_idcoordenador = coordenador_idcoordenador;
-        this.idprofessor = idprofessor;
+       
         this.nota_avaliacao = nota_avaliacao;
         this.status = status;
     }

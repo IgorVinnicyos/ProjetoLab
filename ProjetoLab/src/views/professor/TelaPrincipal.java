@@ -56,7 +56,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logout);
-        logout.setBounds(1190, 40, 110, 80);
+        logout.setBounds(1190, 10, 110, 80);
 
         solicitarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconSolicitar.png"))); // NOI18N
         solicitarSala.setBorder(null);
@@ -87,7 +87,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaPincipalProfessor.png"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -2, 1380, 770);
+        jLabel1.setBounds(0, -2, 1370, 710);
 
         setSize(new java.awt.Dimension(1382, 807));
         setLocationRelativeTo(null);

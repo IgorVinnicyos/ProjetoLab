@@ -34,10 +34,10 @@ public class Conecta {
             System.setProperty("jdbc.Drivers", driver);
             con = DriverManager.getConnection(caminho,usuario, senha);
             
-            JOptionPane.showMessageDialog(null,"conectado com sucesso!!!");
+            System.out.println("Conectado");
         } catch (SQLException ex) {
            
-             JOptionPane.showMessageDialog(null,"Erro de conexao!!"+"Error: \n"+ex.getMessage());
+             System.out.println("Erro de conexao!!"+"Error: \n"+ex.getMessage());
       
         }
    return con;
@@ -46,9 +46,9 @@ public class Conecta {
    
         try {
             con.close();
-            JOptionPane.showMessageDialog(null,"desconectado com sucesso!!!");
+            System.out.println("Desconectado!!");
         } catch (SQLException ex) {
-              JOptionPane.showMessageDialog(null,"Erro ao desconectar!!"+"Error: \n"+ex.getMessage());
+              System.out.println("Erro ao desconectar!!"+"Error: \n"+ex.getMessage());
         }
    
    }

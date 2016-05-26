@@ -13,12 +13,12 @@ public class Acesso {
     private int coordenador_idcoordenador;
     private int funcionario_idfuncionario;
     private int idacesso;
-    private int login;
+    private String login;
     private int professor_idprofessor;
     private String senha;
     private boolean status;
 
-    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, int idacesso, int login, int professor_idprofessor, String senha, boolean status) {
+    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, int idacesso, String login, int professor_idprofessor, String senha, boolean status) {
         this.coordenador_idcoordenador = coordenador_idcoordenador;
         this.funcionario_idfuncionario = funcionario_idfuncionario;
         this.idacesso = idacesso;
@@ -29,7 +29,11 @@ public class Acesso {
         
     }
 
-  
+  public Acesso( String login,int idacesso,String senha){
+  this.login = login;
+  this.senha = senha;
+  this.idacesso = idacesso;
+  }
 
     public int getCoordenador_idcoordenador() {
         return coordenador_idcoordenador;
@@ -55,11 +59,11 @@ public class Acesso {
         this.idacesso = idacesso;
     }
 
-    public int getLogin() {
+    public String getLogin() {
         return login;
     }
 
-    public void setLogin(int login) {
+    public void setLogin(String login) {
         this.login = login;
     }
 

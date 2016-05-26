@@ -5,7 +5,7 @@
  */
 package repositorio;
 
-import classes.Coordenador;
+import classes.*;
 import java.sql.*;
 
 
@@ -31,8 +31,8 @@ public class Inserir {
    
      
      String sql = "insert into coordenador " +
-        "(nome,turno, salario,professor)" +
-        " values (?,?,?,?)"; 
+        "(nome,turno, salario,professor,status)" +
+        " values (?,?,?,?,?)"; 
      
      PreparedStatement stmt = con.prepareStatement(sql);
       System.out.println(c);
@@ -41,6 +41,7 @@ public class Inserir {
      stmt.setString(2,c.getTurno());
      stmt.setDouble(3,c.getSalario());
      stmt.setBoolean(4,c.getProfessor());
+     stmt.setBoolean(5,true);
      
      
     stmt.execute();
@@ -53,6 +54,39 @@ public class Inserir {
      
      
  }  
+ 
+ 
+ 
+ public static void inserirDisciplica(Disciplina d, Connection con){
+ 
+  try{
+   
+     
+     String sql = "insert into coordenador " +
+        "(idprofessor,disciplina)" +
+        " values (?,?,?,?,?)"; 
+     
+     PreparedStatement stmt = con.prepareStatement(sql);
+      System.out.println(d);
+     
+    /* stmt.setString(1, d.getNome());
+     stmt.setString(2,d.getTurno());
+     stmt.setDouble(3,c.getSalario());
+     stmt.setBoolean(4,c.getProfessor());
+     stmt.setBoolean(5,true);*/
+     
+     
+    stmt.execute();
+    stmt.close();
+      System.out.println("inseriu!!!");
+     }catch(SQLException e){
+         
+     System.out.println(e);
+     }
+ 
+ }
+ 
+ 
 }
     
 

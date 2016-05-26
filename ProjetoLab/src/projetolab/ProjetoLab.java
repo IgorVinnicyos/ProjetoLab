@@ -8,6 +8,7 @@ import conexao.Conecta;
 import java.sql.*;
 import repositorio.*;
 import classes.*;
+import views.TelaLogin;
 /**
  *
  * @author 151091797
@@ -20,18 +21,8 @@ public class ProjetoLab {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        /*Conecta conexao = new Conecta();
-        
-       Connection con = conexao.Conecta();
-        
-        System.out.println(con);
-        
-      Coordenador coordenador = new Coordenador("Rodrigo","diurno",5000,true);
-        
-       repositorio.Inserir.inserirCoordenador(coordenador, con);*/
-       
-       
-        
+        TelaLogin tl = new TelaLogin();
+        tl.setVisible(true);
         
                 }
     

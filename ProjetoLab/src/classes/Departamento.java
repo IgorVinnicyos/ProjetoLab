@@ -18,8 +18,8 @@ public class Departamento {
     private String tipo;
     private boolean status;
 
-    public Departamento(int iddepartamento, String horario, int local_idlocal, String responsavel, String tipo,boolean status) {
-        this.iddepartamento = iddepartamento;
+    public Departamento( String horario, int local_idlocal, String responsavel, String tipo,boolean status) {
+        
         this.horario = horario;
         this.local_idlocal = local_idlocal;
         this.responsavel = responsavel;

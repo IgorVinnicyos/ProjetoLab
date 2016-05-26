@@ -17,10 +17,10 @@ public class Funcionario {
     private double salario;
     private boolean status;
 
-    public Funcionario(String cargo, int departamento_iddepartamento, int idfuncionario, String nome, double salario,boolean status) {
+    public Funcionario(String cargo, int departamento_iddepartamento,  String nome, double salario,boolean status) {
         this.cargo = cargo;
         this.departamento_iddepartamento = departamento_iddepartamento;
-        this.idfuncionario = idfuncionario;
+       
         this.nome = nome;
         this.salario = salario;
         this.status = status;
