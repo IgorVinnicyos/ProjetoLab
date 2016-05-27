@@ -14,13 +14,12 @@ public class Sala {
    private int capacidade_aluno;
    private int idsala;
    private boolean locada;
-   private String local_idlocal;
+   private int local_idlocal;
    private String tipo;
    private boolean status;
 
-    public Sala(int capacidade_aluno, int idsala, boolean locada, String local_idlocal, String tipo,boolean status) {
+    public Sala(int capacidade_aluno,boolean locada, int local_idlocal, String tipo,boolean status) {
         this.capacidade_aluno = capacidade_aluno;
-        this.idsala = idsala;
         this.locada = locada;
         this.local_idlocal = local_idlocal;
         this.tipo = tipo;
@@ -53,11 +52,11 @@ public class Sala {
 
   
 
-    public String getLocal_idlocal() {
+    public int getLocal_idlocal() {
         return local_idlocal;
     }
 
-    public void setLocal_idlocal(String local_idlocal) {
+    public void setLocal_idlocal(int local_idlocal) {
         this.local_idlocal = local_idlocal;
     }
 

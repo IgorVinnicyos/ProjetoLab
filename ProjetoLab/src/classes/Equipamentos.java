@@ -18,12 +18,11 @@ public class Equipamentos {
     private int idequipamentos;
     private boolean status;
 
-    public Equipamentos(String nome, int quantidade, String tipo, String descricao, int idequipamentos,boolean status) {
+    public Equipamentos(String nome, int quantidade, String tipo, String descricao,boolean status) {
         this.nome = nome;
         this.quantidade = quantidade;
         this.tipo = tipo;
         this.descricao = descricao;
-        this.idequipamentos = idequipamentos;
         this.status = status;
     }
     

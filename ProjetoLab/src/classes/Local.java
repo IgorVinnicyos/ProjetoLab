@@ -16,11 +16,10 @@ public class Local {
     private int idlocal;
     private boolean status;
 
-    public Local(String andar, String bloco, String codigo, int idlocal,boolean status) {
+    public Local(String andar, String bloco, String codigo,boolean status) {
         this.andar = andar;
         this.bloco = bloco;
         this.codigo = codigo;
-        this.idlocal = idlocal;
         this.status = status;
     }
 

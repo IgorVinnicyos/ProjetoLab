@@ -26,7 +26,6 @@ public class Professor {
         this.salario = salario;
         this.formacao = formacao;
         this.coordenador_idcoordenador = coordenador_idcoordenador;
-       
         this.nota_avaliacao = nota_avaliacao;
         this.status = status;
     }

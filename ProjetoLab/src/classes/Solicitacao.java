@@ -23,11 +23,10 @@ public class Solicitacao {
     private int sala_idsala;
     private boolean status;
 
-    public Solicitacao(Date data_solicitacao, int depatarmento_iddepartamento, String horario, int idsolicitacao, int numero_protocolo, int professor_idprofessor, int sala_idsala,boolean status) {
+    public Solicitacao(Date data_solicitacao, int depatarmento_iddepartamento, String horario, int numero_protocolo, int professor_idprofessor, int sala_idsala,boolean status) {
         this.data_solicitacao = data_solicitacao;
         this.depatarmento_iddepartamento = depatarmento_iddepartamento;
         this.horario = horario;
-        this.idsolicitacao = idsolicitacao;
         this.numero_protocolo = numero_protocolo;
         this.professor_idprofessor = professor_idprofessor;
         this.sala_idsala = sala_idsala;

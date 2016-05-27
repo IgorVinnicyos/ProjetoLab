@@ -18,10 +18,9 @@ public class Acesso {
     private String senha;
     private boolean status;
 
-    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, int idacesso, String login, int professor_idprofessor, String senha, boolean status) {
+    public Acesso(int coordenador_idcoordenador, int funcionario_idfuncionario, String login, int professor_idprofessor, String senha, boolean status) {
         this.coordenador_idcoordenador = coordenador_idcoordenador;
         this.funcionario_idfuncionario = funcionario_idfuncionario;
-        this.idacesso = idacesso;
         this.login = login;
         this.professor_idprofessor = professor_idprofessor;
         this.senha = senha;

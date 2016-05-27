@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class LocaSala {
     
-    private int horario;
+    private String horario;
     private Date dia;
     private boolean autorizacao;
     private int agenda_idagenda;
@@ -23,23 +23,22 @@ public class LocaSala {
     private int sala_idsala;
     private boolean status;
 
-    public LocaSala(int horario, Date dia, boolean autorizacao, int agenda_idagenda, int coordenador_idcoordenador, int idloca_sala, int professor_idprofessor, int sala_idsala,boolean status) {
+    public LocaSala(String horario, Date dia, boolean autorizacao, int agenda_idagenda, int coordenador_idcoordenador,int professor_idprofessor, int sala_idsala,boolean status) {
         this.horario = horario;
         this.dia = dia;
         this.autorizacao = autorizacao;
         this.agenda_idagenda = agenda_idagenda;
         this.coordenador_idcoordenador = coordenador_idcoordenador;
-        this.idloca_sala = idloca_sala;
         this.professor_idprofessor = professor_idprofessor;
         this.sala_idsala = sala_idsala;
         this.status = status;
     }
 
-    public int getHorario() {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(int horario) {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
 
