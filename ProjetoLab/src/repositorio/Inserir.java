@@ -418,7 +418,7 @@ public class Inserir {
      
      stmt.setInt(1, s.getCapacidade_aluno());
      stmt.setString(2, s.getTipo());
-     stmt.setBoolean(3, s.getLocada());
+     stmt.setBoolean(3, s.isLocada());
      stmt.setInt(4, s.getLocal_idlocal());
      stmt.setBoolean(5,true);
     
@@ -456,7 +456,7 @@ public class Inserir {
      
      stmt.setString(1, sl.getHorario());
      stmt.setInt(2, sl.getNumero_protocolo());
-     stmt.setDate(3,sl.getData_solicitacao());
+     stmt.setDate(3,new java.sql.Date(sl.getData_solicitacao().getTimeOfDay()));
      stmt.setInt(4, sl.getSala_idsala());
      stmt.setInt(5, sl.getProfessor_idprofessor());
      stmt.setInt(6, sl.getDepatarmento_iddepartamento());

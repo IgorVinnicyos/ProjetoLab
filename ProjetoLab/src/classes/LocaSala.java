@@ -50,7 +50,7 @@ public class LocaSala {
         this.dia = dia;
     }
 
-    public boolean isAutorizacao() {
+    public boolean getAutorizacao() {
         return autorizacao;
     }
 
