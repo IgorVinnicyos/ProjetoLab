@@ -34,7 +34,12 @@ public class Professor {
 
     
 
-    public Professor() {
+    public Professor(String nome,String turno, double salario,boolean status) {
+         this.nome = nome;
+        this.turno = turno;
+        this.salario = salario;
+        this.coordenador_idcoordenador = coordenador_idcoordenador;
+         this.status = status;
     }
 
     public String getNome() {

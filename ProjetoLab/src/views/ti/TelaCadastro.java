@@ -6,6 +6,7 @@
 package views.ti;
 
 import classes.Coordenador;
+import classes.Professor;
 import conexao.Conecta;
 import java.sql.Connection;
 import repositorio.Inserir;
@@ -324,6 +325,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         // TODO add your handling code here:
         Conecta con = new Conecta();
         Connection conexao= con.Conecta();
+        boolean inserirDisciplina = false;
         
         boolean professor = false;
         String nome = campoNome.getText();
@@ -331,10 +333,19 @@ public class TelaCadastro extends javax.swing.JFrame {
         double salario = Double.parseDouble(campoSalario.getText());
         if(CheckBoxProfessor.isSelected()){
         professor = true;
+        inserirDisciplina = true;
         }
         Coordenador c = new Coordenador(nome, turno, salario, professor,true);
        
-        Inserir.inserirCoordenador(c, conexao);
+        
+       int idcoordenador =  Inserir.inserirCoordenador(c, conexao);
+        
+       System.out.println(idcoordenador);
+        if(inserirDisciplina == true){
+            
+        
+        
+        }
     }//GEN-LAST:event_buttonCadastrarActionPerformed
 
     /**

@@ -24,8 +24,8 @@ import conexao.Conecta;
  */
 public class Inserir {
     
- public static void inserirCoordenador(Coordenador c, Connection con){
- 
+ public static int inserirCoordenador(Coordenador c, Connection con){
+ int id = 0;
      
      try{
    
@@ -34,7 +34,7 @@ public class Inserir {
         "(nome,turno, salario,professor,status)" +
         " values (?,?,?,?,?)"; 
      
-     PreparedStatement stmt = con.prepareStatement(sql);
+     PreparedStatement stmt = con.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
       System.out.println(c);
      
      stmt.setString(1, c.getNome());
@@ -45,45 +45,60 @@ public class Inserir {
      
      
     stmt.execute();
-    stmt.close();
+    ResultSet rs = stmt.getGeneratedKeys();
+
+   
+   while(rs.next()){
+   
+       id = rs.getInt(1);
+   }
+   
+     System.out.println(id);
+    
+   stmt.close();
       System.out.println("inseriu!!!");
      }catch(SQLException e){
          
      System.out.println(e);
      }
      
-     
+     return id;
  }  
  
  
  
- public static void inserirDisciplica(Disciplina d, Connection con){
- 
+ public static int inserirDisciplica(Disciplina d, Connection con){
+ int id= 0;
   try{
    
      
      String sql = "insert into coordenador " +
-        "(idprofessor,disciplina)" +
-        " values (?,?,?,?,?)"; 
+        "(professor_idprofessor,status,disciplina)" +
+        " values (?,?,?)"; 
      
-     PreparedStatement stmt = con.prepareStatement(sql);
+     PreparedStatement stmt = con.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
       System.out.println(d);
      
-    /* stmt.setString(1, d.getNome());
-     stmt.setString(2,d.getTurno());
-     stmt.setDouble(3,c.getSalario());
-     stmt.setBoolean(4,c.getProfessor());
-     stmt.setBoolean(5,true);*/
-     
+     stmt.setInt(1, d.getProfessor_idprofessor());
+     stmt.setBoolean(2,true);
+     stmt.setString(3,d.getDisciplina());
      
     stmt.execute();
+    
+     ResultSet rs = stmt.getGeneratedKeys();
+
+   
+   while(rs.next()){
+   
+       id = rs.getInt(1);
+   }
     stmt.close();
       System.out.println("inseriu!!!");
      }catch(SQLException e){
          
      System.out.println(e);
      }
- 
+ return id;
  }
  
  
