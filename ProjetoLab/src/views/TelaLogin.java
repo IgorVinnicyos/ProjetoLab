@@ -75,6 +75,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jToggleButton1.setBackground(new java.awt.Color(255, 153, 0));
         jToggleButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jToggleButton1.setText("Login");
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -247,7 +248,7 @@ public class TelaLogin extends javax.swing.JFrame {
                             Pilha.tiPilha(f);
                             TelaPrincipalTi tpi = new TelaPrincipalTi();
                             tpi.setVisible(true);
-                            con.Desconecta();
+                            
                             this.dispose();
 
                         } else {

@@ -53,18 +53,27 @@ Conecta con = new Conecta();
         jButton1 = new javax.swing.JButton();
         userName = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        PainelAcesso = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setExtendedState(6);
-        setMaximumSize(new java.awt.Dimension(1366, 710));
         setMinimumSize(new java.awt.Dimension(1366, 710));
         getContentPane().setLayout(null);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logout.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(1200, 60, 70, 70);
 
@@ -79,6 +88,7 @@ Conecta con = new Conecta();
         jButton2.setText("jButton2");
         jButton2.setBorder(null);
         jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.setFocusPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +97,26 @@ Conecta con = new Conecta();
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(80, 230, 120, 110);
+
+        PainelAcesso.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acesso", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
+        PainelAcesso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        PainelAcesso.setOpaque(false);
+        PainelAcesso.setLayout(null);
+        PainelAcesso.add(jTextField1);
+        jTextField1.setBounds(10, 20, 200, 30);
+
+        jButton3.setText("jButton3");
+        PainelAcesso.add(jButton3);
+        jButton3.setBounds(220, 20, 73, 23);
+
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane2.setBorder(null);
+        jScrollPane2.setOpaque(false);
+        PainelAcesso.add(jScrollPane2);
+        jScrollPane2.setBounds(0, 100, 660, 180);
+
+        getContentPane().add(PainelAcesso);
+        PainelAcesso.setBounds(30, 410, 660, 280);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaPincipalLimpa.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -101,6 +131,11 @@ Conecta con = new Conecta();
         TelaCadastro tc = new TelaCadastro();
         tc.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,9 +173,13 @@ Conecta con = new Conecta();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JPanel PainelAcesso;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     public static javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }

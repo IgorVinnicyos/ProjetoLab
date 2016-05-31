@@ -21,9 +21,14 @@ public class ProjetoLab {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        TelaLogin tl = new TelaLogin();
-        tl.setVisible(true);
+       TelaLogin tl = new TelaLogin();
+       tl.setVisible(true);
+     // Conecta con = new Conecta();
+      
+      //Connection conexao = con.Conecta();
         
+     
+     
                 }
     
 }

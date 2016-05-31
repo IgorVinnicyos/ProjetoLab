@@ -72,7 +72,7 @@ public class Inserir {
   try{
    
      
-     String sql = "insert into diciplina " +
+     String sql = "insert into disciplina " +
         "(professor_idprofessor,status,disciplina)" +
         " values (?,?,?)"; 
      
@@ -370,7 +370,7 @@ public class Inserir {
    
      
      String sql = "insert into professor " +
-        "(nome,formacao,turno,salario,salario,nota_avaliacao,status)" +
+        "(nome,formacao,turno,salario,coordenador_idcoordenador,nota_avaliacao,status)" +
         " values (?,?,?,?,?,?,?)"; 
      
      PreparedStatement stmt = con.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
@@ -430,7 +430,7 @@ public class Inserir {
    
    while(rs.next()){
    
-       id = rs.getInt(1);
+       id = rs.getInt("idprofessor");
    }
     stmt.close();
       System.out.println("inseriu!!!");

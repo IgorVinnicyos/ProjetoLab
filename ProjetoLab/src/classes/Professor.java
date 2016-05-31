@@ -108,7 +108,7 @@ public class Professor {
   
     @Override
     public String toString() {
-        return "Professor: " + "\nNome: " + nome + "\nTurno: " + turno + "\nSalario: " + salario + "\nFormacao: " + formacao + "\nCoordenador_idcoordenador: " + coordenador_idcoordenador + "\nIdProfessor: " + idprofessor + "\nNota_Avaliacao: " + nota_avaliacao + "\nStatus: " + status;
+        return "Professor: " + "\nNome: " + nome + "\nTurno: " + turno + "\nSalario: " + salario + "\nFormacao: " + formacao + "\nCoordenador_idcoordenador: " + coordenador_idcoordenador  + "\nNota_Avaliacao: " + nota_avaliacao + "\nStatus: " + status;
     }
 
  

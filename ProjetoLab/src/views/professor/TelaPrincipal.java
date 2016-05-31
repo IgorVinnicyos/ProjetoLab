@@ -46,7 +46,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         logout.setBorder(null);
         logout.setBorderPainted(false);
         logout.setContentAreaFilled(false);
-        logout.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        logout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logout.setFocusCycleRoot(true);
         logout.setFocusPainted(false);
         logout.setFocusTraversalPolicyProvider(true);
@@ -56,12 +56,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(logout);
-        logout.setBounds(1190, 10, 110, 80);
+        logout.setBounds(1190, 50, 110, 80);
 
         solicitarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconSolicitar.png"))); // NOI18N
         solicitarSala.setBorder(null);
         solicitarSala.setBorderPainted(false);
         solicitarSala.setContentAreaFilled(false);
+        solicitarSala.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         solicitarSala.setFocusPainted(false);
         solicitarSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,6 +77,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButton3.setBorder(null);
         jButton3.setBorderPainted(false);
         jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.setFocusPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
