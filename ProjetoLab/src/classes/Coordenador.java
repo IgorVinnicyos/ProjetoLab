@@ -26,6 +26,14 @@ public class Coordenador {
         this.salario = salario;
     }
 
+       public Coordenador(String nome, String turno,  double salario,boolean professor,boolean status,int idcoordenador) {
+        this.nome = nome;
+        this.professor = professor;
+        this.turno = turno;
+        this.status = status;
+        this.salario = salario;
+        this.idcoordenador = idcoordenador;
+    }
     public boolean isStatus() {
         return status;
     }

@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import repositorio.pilha.AcessoPilha;
 import repositorio.pilha.Pilha;
+import views.coordenador.TelaCadastrar;
 import views.coordenador.TelaPrincipalCoordenador;
 import views.professor.TelaPrincipal;
 import views.ti.TelaPrincipalTi;
@@ -181,7 +182,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         while (Crst.next()) {
 
                             if (Crst.getBoolean("status") == true) {
-                                Coordenador c = new Coordenador(Crst.getString("nome"), Crst.getString("turno"), Crst.getDouble("salario"), Crst.getBoolean("professor"), Crst.getBoolean("status"));
+                                Coordenador c = new Coordenador(Crst.getString("nome"), Crst.getString("turno"), Crst.getDouble("salario"), Crst.getBoolean("professor"), Crst.getBoolean("status"),Crst.getInt("idcoordenador"));
 
                                 Acesso a = new Acesso(rst.getString("login"), rst.getInt("idacesso"), rst.getString("senha"));
 
@@ -189,7 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
                                 
                                 Pilha.coordenadorPilha(c);
-                                TelaPrincipalCoordenador tpc = new TelaPrincipalCoordenador();
+                                TelaCadastrar tpc = new TelaCadastrar();
                                 tpc.setVisible(true);
                                 this.dispose();
                             } else {
