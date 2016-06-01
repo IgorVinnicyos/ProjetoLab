@@ -53,10 +53,6 @@ Conecta con = new Conecta();
         jButton1 = new javax.swing.JButton();
         userName = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        PainelAcesso = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,26 +93,6 @@ Conecta con = new Conecta();
         });
         getContentPane().add(jButton2);
         jButton2.setBounds(80, 230, 120, 110);
-
-        PainelAcesso.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acesso", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 18), new java.awt.Color(255, 255, 255))); // NOI18N
-        PainelAcesso.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        PainelAcesso.setOpaque(false);
-        PainelAcesso.setLayout(null);
-        PainelAcesso.add(jTextField1);
-        jTextField1.setBounds(10, 20, 200, 30);
-
-        jButton3.setText("jButton3");
-        PainelAcesso.add(jButton3);
-        jButton3.setBounds(220, 20, 73, 23);
-
-        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane2.setBorder(null);
-        jScrollPane2.setOpaque(false);
-        PainelAcesso.add(jScrollPane2);
-        jScrollPane2.setBounds(0, 100, 660, 180);
-
-        getContentPane().add(PainelAcesso);
-        PainelAcesso.setBounds(30, 410, 660, 280);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaPincipalLimpa.png"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -173,13 +149,9 @@ Conecta con = new Conecta();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JPanel PainelAcesso;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     public static javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }
