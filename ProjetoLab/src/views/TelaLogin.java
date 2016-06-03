@@ -190,7 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
                                 
                                 Pilha.coordenadorPilha(c);
-                                TelaCadastrar tpc = new TelaCadastrar();
+                                TelaPrincipalCoordenador tpc = new TelaPrincipalCoordenador();
                                 tpc.setVisible(true);
                                 this.dispose();
                             } else {

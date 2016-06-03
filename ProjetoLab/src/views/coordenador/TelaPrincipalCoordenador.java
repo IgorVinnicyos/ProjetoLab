@@ -5,6 +5,9 @@
  */
 package views.coordenador;
 
+import classes.Acesso;
+import repositorio.pilha.AcessoPilha;
+
 /**
  *
  * @author igor_
@@ -16,6 +19,10 @@ public class TelaPrincipalCoordenador extends javax.swing.JFrame {
      */
     public TelaPrincipalCoordenador() {
         initComponents();
+        
+        Acesso a = AcessoPilha.tirarAcesso();
+        TxtNomeUsuario.setText(a.getLogin());
+        
     }
 
     /**
@@ -27,21 +34,73 @@ public class TelaPrincipalCoordenador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        TxtNomeUsuario = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1366, 710));
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/logout.png"))); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(1210, 60, 70, 70);
 
-        pack();
+        TxtNomeUsuario.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        TxtNomeUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        TxtNomeUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(TxtNomeUsuario);
+        TxtNomeUsuario.setBounds(990, 80, 120, 20);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/iconProfessor.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton2.setFocusPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(50, 220, 120, 120);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaPincipalLimpa.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1366, 710);
+
+        setSize(new java.awt.Dimension(1382, 749));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:Te
+        
+        TelaCadastrar tc = new TelaCadastrar();
+        tc.setVisible(true);
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +138,9 @@ public class TelaPrincipalCoordenador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public static javax.swing.JLabel TxtNomeUsuario;
+    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
