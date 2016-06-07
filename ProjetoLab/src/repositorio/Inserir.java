@@ -165,7 +165,7 @@ public class Inserir {
    
        id = rs.getInt(1);
    }
-    stmt.close();
+  stmt.close();
       System.out.println("inseriu!!!");
      }catch(SQLException e){
          
@@ -290,7 +290,7 @@ public class Inserir {
   try{
    
      
-     String sql = "insert into locaSala " +
+     String sql = "insert into loca_Sala " +
         "(horario,dia,autorizacao,professor_idprofessor,sala_idsala,coordenador_idcoordenador,agenda_idagenda,status)" +
         " values (?,?,?,?,?,?,?,?)"; 
      
@@ -456,7 +456,7 @@ public class Inserir {
      
      stmt.setString(1, sl.getHorario());
      stmt.setInt(2, sl.getNumero_protocolo());
-     stmt.setDate(3,new java.sql.Date(sl.getData_solicitacao().getTimeOfDay()));
+     stmt.setDate(3,new java.sql.Date(sl.getData_solicitacao().getTime()));
      stmt.setInt(4, sl.getSala_idsala());
      stmt.setInt(5, sl.getProfessor_idprofessor());
      stmt.setInt(6, sl.getDepatarmento_iddepartamento());
@@ -524,14 +524,16 @@ public class Inserir {
    
      
      String sql = "insert into equipamentos_solicitados " +
-        "(quantidade,status)" +
-        " values (?,?)"; 
+        "(equipamentos_idequipamentos,solicitacao_idsolicitacao,quantidade,status)" +
+        " values (?,?,?,?)"; 
      
      PreparedStatement stmt = con.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
       System.out.println(es);
      
-     stmt.setInt(1, es.getQuantidade());
-     stmt.setBoolean(2,true);
+     stmt.setInt(1, es.getEquipamentos_idequipamentos());
+     stmt.setInt(2, es.getSolicitacao_idsolicitacao());
+     stmt.setInt(3, es.getQuantidade());
+     stmt.setBoolean(4,true);
     
      
     stmt.execute();

@@ -211,7 +211,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     while (Prst.next()) {
 
                         if (Prst.getBoolean("status") == true) {
-                            Professor p = new Professor(Prst.getString("nome"), Prst.getString("turno"), Prst.getDouble("salario"), Prst.getString("formacao"), Prst.getInt("coordenador_idcoordenador"), Prst.getInt("nota_avaliacao"), Prst.getBoolean("status"));
+                            Professor p = new Professor(Prst.getString("nome"), Prst.getString("turno"), Prst.getDouble("salario"), Prst.getString("formacao"), Prst.getInt("coordenador_idcoordenador"), Prst.getInt("nota_avaliacao"), Prst.getBoolean("status"),Prst.getInt(1));
 
                             Acesso a = new Acesso(rst.getString("login"), rst.getInt("idacesso"), rst.getString("senha"));
 

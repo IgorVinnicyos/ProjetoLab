@@ -5,8 +5,11 @@
  */
 package views.professor;
 
+import classes.Acesso;
 import classes.Coordenador;
+import classes.Professor;
 import javax.swing.JOptionPane;
+import repositorio.pilha.AcessoPilha;
 import repositorio.pilha.Pilha;
 import views.TelaLogin;
 
@@ -35,6 +38,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         logout = new javax.swing.JButton();
         solicitarSala = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        login = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,6 +92,24 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(240, 240, 150, 110);
 
+        login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(login);
+        login.setBounds(980, 74, 130, 20);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icon_equipamento.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(400, 250, 170, 140);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/TelaPincipalProfessor.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, -2, 1370, 710);
@@ -97,10 +120,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Pilha pilha = new Pilha();
-        Coordenador c = pilha.tirarCoordenador();
-        
-        JOptionPane.showMessageDialog(null, c); 
+      Acesso a = AcessoPilha.tirarAcesso();
+        login.setText(a.getLogin());
+         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void solicitarSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_solicitarSalaActionPerformed
@@ -115,6 +137,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         this.dispose();
        
     }//GEN-LAST:event_logoutActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        TelaEquipamento te = new TelaEquipamento();
+        te.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,8 +180,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel login;
     private javax.swing.JButton logout;
     private javax.swing.JButton solicitarSala;
     // End of variables declaration//GEN-END:variables

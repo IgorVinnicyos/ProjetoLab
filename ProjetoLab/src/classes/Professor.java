@@ -33,12 +33,15 @@ public class Professor {
 
     
 
-    public Professor(String nome,String turno, double salario,boolean status) {
-         this.nome = nome;
+     public Professor(String nome, String turno, double salario, String formacao, int coordenador_idcoordenador,  int nota_avaliacao,boolean status, int idprofessor) {
+        this.nome = nome;
         this.turno = turno;
         this.salario = salario;
+        this.formacao = formacao;
         this.coordenador_idcoordenador = coordenador_idcoordenador;
-         this.status = status;
+        this.nota_avaliacao = nota_avaliacao;
+        this.status = status;
+        this.idprofessor = idprofessor;
     }
 
     public String getNome() {
